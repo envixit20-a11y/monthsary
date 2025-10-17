@@ -3,96 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For You 💌</title>
+  <title>Happy Monthsary, My Love 💌</title>
   <style>
-    body {
-      background-color: #0d0d0d;
-      color: #fff;
-      font-family: 'Courier New', monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      overflow: hidden;
+    /* Reset */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
+    body {
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    /* 🌠 Starry background */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent url('https://raw.githubusercontent.com/ironhack-labs/lab-canvas-race-car/master/images/stars.png') repeat;
+      animation: moveStars 200s linear infinite;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: -10000px 5000px; }
+    }
+
+    /* Intro text and button */
     #introText {
-      font-size: 1.5rem;
+      z-index: 1;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
       transition: opacity 1s ease;
     }
 
     .btn {
-      margin-top: 20px;
-      padding: 10px 25px;
-      font-size: 1rem;
+      z-index: 1;
+      background: #ff7eb9;
       border: none;
-      border-radius: 8px;
-      background-color: #ff6b81;
+      padding: 12px 28px;
+      border-radius: 30px;
       color: white;
+      font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      font-size: 1rem;
+      transition: all 0.3s ease;
     }
 
     .btn:hover {
-      background-color: #ff4c68;
+      background: #ff4b8b;
+      transform: scale(1.05);
     }
 
+    /* Letter box scroll effect */
     #letterBox {
       display: none;
-      margin: 40px;
-      font-size: 1.2rem;
-      white-space: pre-line;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #ffd1dc;
+      border-radius: 16px;
+      width: 80%;
       max-width: 600px;
-      line-height: 1.6;
+      height: 60vh;
+      overflow-y: auto;
+      padding: 30px;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      text-align: left;
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.3);
+      scroll-behavior: smooth;
     }
 
     #typedText {
-      animation: fadeIn 1s ease forwards;
+      white-space: pre-wrap;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #ff7eb9;
+      border-radius: 3px;
     }
   </style>
 </head>
 <body>
-  <div id="introText">Hey... I wrote something for you 💌</div>
+  <div class="stars"></div>
+
+  <h2 id="introText">Hey love... I wrote something for you 💌</h2>
   <button class="btn" onclick="showLetter()">Read Letter</button>
 
   <div id="letterBox">
-    <div id="typedText"></div>
+    <p id="typedText"></p>
   </div>
 
-  <!-- 🎵 Music -->
-  <audio id="bgMusic" src="music.mp3" loop></audio>
+  <!-- 🎶 Background Music -->
+  <audio id="bgMusic" src="song.mp3"></audio>
 
   <script>
-    const message = `Happy Monthsary, my love. 💖
+    const message = `Happy Monthsary, my love 💖
 
-I know we haven’t been okay lately, especially with all the fighting and arguments. But I want you to know something very important — I love you. I love you more than our disagreements, more than our misunderstandings, and more than you’ll ever know.
+I know we haven’t always been okay, especially with the fights and misunderstandings. But I want you to know something important — I love you. I love you more than our arguments and disagreements, more than you’ll ever realize. 
 
-You mean the world to me, even during the times we’re apart. I care about you more deeply than you probably realize.
+I care about you deeply — more than you think. Today, October 17, will always be special to me. It was the day I first saw you, the day I fell for you. I still remember that president meeting... I didn’t even know how to approach you because you were so beautiful that I froze for a second. But I’m glad I did. Because from that moment on, my world changed.
 
-This day — October 17 — means so much to me. It was the day I saw you. The day I fell in love with you. I still remember that meeting, the president’s meeting or whatever it was called. That’s where I first met you. You were so beautiful that I was honestly stunned. I didn’t know how to approach you, but I’m so glad that I did. Because that moment changed everything.
+I love you more than anything, and even during the times I couldn’t message you — because of signal or life getting in the way — I never stopped caring about you. 
 
-I love you more than anything, and I’ll always care about you, even when I can’t message you because of signal or other things. Please never doubt that. You’re always on my mind, even in the silence.
+I’m sorry, my love — for every fight, every tear, every time I made you doubt us. I’m sorry for the moments your heart felt broken, for the times you thought about giving up on us. You didn’t deserve that. 
 
-I’m sorry for all the times we fought, for the moments when you cried, for the times when your heart was shattered into a million pieces, and for the nights you thought about giving up on us. I’m sorry, my love.
+I’m sorry for not being ready financially, for not being able to give you everything you deserve yet... but please know, I’m trying — because you’re worth every effort, every dream, every heartbeat. 
 
-I’m sorry for not being fully ready — financially, emotionally — and for not being able to keep up with your lifestyle sometimes. But please know that I’m trying, and I’ll keep trying, because you’re worth every effort, every second, every heartbeat.
+You are my favorite person — the one who makes me believe love is real.  
+And even if life gets hard, even if we lose our way sometimes… I will always find my way back to you.
 
-I love you, endlessly. Always have, always will. 💗`;
+With all my love,  
+— Yours always 💌`;
 
     function showLetter() {
-      const music = document.getElementById("bgMusic");
-      music.play();
-
       document.getElementById("introText").style.opacity = 0;
       document.querySelector(".btn").style.display = "none";
+
+      // 🎵 Play music after click (autoplay restriction bypass)
+      const music = document.getElementById("bgMusic");
+      music.volume = 0.5;
+      music.play().catch(err => console.log("Autoplay blocked until interaction"));
 
       setTimeout(() => {
         const letterBox = document.getElementById("letterBox");
@@ -104,12 +152,12 @@ I love you, endlessly. Always have, always will. 💗`;
           if (i < message.length) {
             typedText.innerHTML += message.charAt(i);
             i++;
-            setTimeout(typeWriter, 30);
+            setTimeout(typeWriter, 50); // slower typing speed
           }
         }
 
         typeWriter();
-      }, 600);
+      }, 800);
     }
   </script>
 </body>
